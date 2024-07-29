@@ -8,9 +8,9 @@ export default function TextUnderline({
   className = "",
 }: TextUnderlineProps) {
   return (
-    <span className={`group inline-block relative ${className}`}>
+    <span className={`group inline-block cursor-pointer relative ${className}`}>
       {text}
-      <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-1 -mt-0.5 bg-sky-600 absolute bottom-0 left-0"></span>
+      <span className="block max-w-0 group-hover:min-w-full transition-all transform ease-in-out duration-500 h-1 -mt-0.5 bg-sky-600 "></span>
     </span>
   );
 }
