@@ -1,6 +1,6 @@
-import Image from "next/image";
-import TextUnderline from "./animations/TextUnderline";
 import FadeIn from "./animations/FadeIn";
+import Toggle from "./components/Toggle";
+import { fadeInCode } from "./code-strings/fadeIn";
 
 export default function Home() {
   return (
@@ -11,10 +11,7 @@ export default function Home() {
       <FadeIn delay={0.4} className="text-xl sm:text-2xl lg:text-3xl mt-4">
         Description with delay
       </FadeIn>
-      {/* <TextUnderline
-        text="Hover me to animate"
-        className="text-4xl sm:text-6xl"
-      /> */}
+      <Toggle animationComponent={FadeIn} code={fadeInCode} />
     </main>
   );
 }
