@@ -9,9 +9,10 @@ import {
   CodeBracketIcon,
   ClipboardDocumentIcon,
   ClipboardDocumentCheckIcon,
+  ArrowPathIcon,
 } from "@heroicons/react/24/outline";
 
-interface ToggleProps {
+interface CodePreviewProps {
   animationComponent: ComponentType<{
     children: ReactNode;
     [key: string]: any;
@@ -21,23 +22,40 @@ interface ToggleProps {
   text: string;
 }
 
-export default function Toggle({
+export default function CodePreview({
   animationComponent: AnimationComponent,
   code,
   animationProps = {},
   text,
-}: ToggleProps) {
+}: CodePreviewProps) {
   const [showCode, setShowCode] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [resetKey, setResetKey] = useState(0);
+  const [rotateIcon, setRotateIcon] = useState(false);
 
   const handleCopy = () => {
     setCopied(true);
     setTimeout(() => setCopied(false), 2000); // Reset the icon after 2 seconds
   };
 
+  const handleReset = () => {
+    setResetKey((prev) => prev + 1); // Increment the key to force re-render
+    setRotateIcon((prev) => !prev); // Toggle the rotation state
+  };
+
   return (
-    <div className="border p-4 my-4 w-full min-h-[300px]">
+    <div className="border rounded-2xl p-4 my-4 w-full min-h-[300px]">
       <div className="flex justify-end items-center mb-4">
+        <button
+          onClick={handleReset}
+          className="flex items-center mr-4 text-xs">
+          <ArrowPathIcon
+            className={`h-5 w-5 mr-2 transition-transform ${
+              rotateIcon ? "rotate-180" : ""
+            }`}
+          />
+          Refresh
+        </button>
         <Field className="flex items-center">
           <Switch
             checked={showCode}
@@ -64,7 +82,7 @@ export default function Toggle({
           </button>
         </CopyToClipboard>
       </div>
-      <AnimationComponent {...animationProps}>
+      <AnimationComponent key={resetKey} {...animationProps}>
         <div className="text-3xl sm:text-4xl lg:text-5xl">{text}</div>
       </AnimationComponent>
       {showCode && (
