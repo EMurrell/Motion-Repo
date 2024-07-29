@@ -4,9 +4,8 @@ import { useState, ComponentType, ReactNode } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { coy as style } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { CopyToClipboard } from "react-copy-to-clipboard";
-import { Switch } from "@headlessui/react";
+import { Switch, Label, Field } from "@headlessui/react";
 import {
-  EyeIcon,
   CodeBracketIcon,
   ClipboardDocumentIcon,
   ClipboardDocumentCheckIcon,
@@ -15,10 +14,6 @@ import {
 interface ToggleProps {
   animationComponent: ComponentType<{ children: ReactNode }>;
   code: string;
-}
-
-function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(" ");
 }
 
 export default function Toggle({
@@ -35,17 +30,24 @@ export default function Toggle({
 
   return (
     <div className="border p-4 my-4 w-full min-h-[300px]">
-      <div className="flex justify-between items-center mb-4">
-        <div className="flex items-center">
+      <div className="flex justify-end items-center mb-4">
+        <Field className="flex items-center">
           <Switch
             checked={showCode}
             onChange={setShowCode}
             className="group inline-flex h-6 w-11 items-center rounded-full bg-gray-200 data-[checked]:bg-blue-600 data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50">
             <span className="size-4 translate-x-1 rounded-full bg-white transition group-data-[checked]:translate-x-6" />
           </Switch>
-        </div>
+          <Label
+            className={`${
+              showCode ? "text-blue-600" : ""
+            } text-xs cursor-pointer flex items-center`}>
+            <CodeBracketIcon className="w-5 h-5 ml-2 mr-1" />
+            Show Code
+          </Label>
+        </Field>
         <CopyToClipboard text={code} onCopy={handleCopy}>
-          <button className=" text-black/80 px-3 py-1 rounded flex items-center ml-4 text-xs">
+          <button className=" px-3 py-1 rounded flex items-center ml-4 text-xs">
             {copied ? (
               <ClipboardDocumentCheckIcon className="h-5 w-5 mr-2" />
             ) : (
