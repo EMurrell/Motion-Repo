@@ -44,7 +44,7 @@ export default function CodePreview({
   };
 
   return (
-    <div className="border rounded-2xl p-4 my-4 w-full min-h-[300px]">
+    <div className="border rounded-2xl p-4 lg:p-12 my-4 w-full min-h-[240px]">
       <div className="flex justify-end items-center mb-4">
         <button
           onClick={handleReset}
