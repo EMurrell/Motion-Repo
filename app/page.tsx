@@ -1,3 +1,5 @@
+// app/page.tsx
+
 import FadeIn from "./animations/FadeIn";
 import Toggle from "./components/Toggle";
 import { fadeInCode } from "./code-strings/fadeIn";
@@ -11,7 +13,22 @@ export default function Home() {
       <FadeIn delay={0.4} className="text-xl sm:text-2xl lg:text-3xl mt-4">
         Description with delay
       </FadeIn>
-      <Toggle animationComponent={FadeIn} code={fadeInCode} />
+      <Toggle
+        animationComponent={FadeIn}
+        code={fadeInCode}
+        animationProps={{
+          up: true,
+          className: "text-xl sm:text-2xl lg:text-3xl mt-4",
+        }}
+      />
+      <Toggle
+        animationComponent={FadeIn}
+        code={fadeInCode}
+        animationProps={{
+          delay: 0.4,
+          className: "text-xl sm:text-2xl lg:text-3xl mt-4",
+        }}
+      />
     </main>
   );
 }

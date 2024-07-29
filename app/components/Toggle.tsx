@@ -12,13 +12,18 @@ import {
 } from "@heroicons/react/24/outline";
 
 interface ToggleProps {
-  animationComponent: ComponentType<{ children: ReactNode }>;
+  animationComponent: ComponentType<{
+    children: ReactNode;
+    [key: string]: any;
+  }>;
   code: string;
+  animationProps?: { [key: string]: any };
 }
 
 export default function Toggle({
   animationComponent: AnimationComponent,
   code,
+  animationProps = {},
 }: ToggleProps) {
   const [showCode, setShowCode] = useState(false);
   const [copied, setCopied] = useState(false);
@@ -57,7 +62,7 @@ export default function Toggle({
           </button>
         </CopyToClipboard>
       </div>
-      <AnimationComponent>
+      <AnimationComponent {...animationProps}>
         <div className="text-3xl sm:text-4xl lg:text-5xl">Hello World</div>
       </AnimationComponent>
       {showCode && (
