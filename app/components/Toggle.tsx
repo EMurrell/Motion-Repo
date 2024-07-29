@@ -18,12 +18,14 @@ interface ToggleProps {
   }>;
   code: string;
   animationProps?: { [key: string]: any };
+  text: string;
 }
 
 export default function Toggle({
   animationComponent: AnimationComponent,
   code,
   animationProps = {},
+  text,
 }: ToggleProps) {
   const [showCode, setShowCode] = useState(false);
   const [copied, setCopied] = useState(false);
@@ -63,7 +65,7 @@ export default function Toggle({
         </CopyToClipboard>
       </div>
       <AnimationComponent {...animationProps}>
-        <div className="text-3xl sm:text-4xl lg:text-5xl">Hello World</div>
+        <div className="text-3xl sm:text-4xl lg:text-5xl">{text}</div>
       </AnimationComponent>
       {showCode && (
         <div className="mt-4">

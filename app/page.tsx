@@ -17,17 +17,10 @@ export default function Home() {
         animationComponent={FadeIn}
         code={fadeInCode}
         animationProps={{
-          up: true,
-          className: "text-xl sm:text-2xl lg:text-3xl mt-4",
-        }}
-      />
-      <Toggle
-        animationComponent={FadeIn}
-        code={fadeInCode}
-        animationProps={{
           delay: 0.4,
           className: "text-xl sm:text-2xl lg:text-3xl mt-4",
         }}
+        text="Your dynamic text here"
       />
     </main>
   );
