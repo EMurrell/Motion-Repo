@@ -1,13 +1,11 @@
 export const staggeredTextCode = `
-"use client"; //for Next.js app router
-
-// Required props: children (ReactNode)
+"use client"; // for Next.js app router
 
 import { motion, useInView } from "framer-motion";
-import { useRef, ReactNode } from "react";
+import { useRef } from "react";
 
 type StaggeredTextProps = {
-  children: ReactNode;
+  children: string;
   el?: keyof JSX.IntrinsicElements;
   className?: string;
   once?: boolean;
@@ -33,8 +31,7 @@ export default function StaggeredText({
 }: StaggeredTextProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, { amount: 0.5, once });
-
-  const childArray = typeof children === "string" ? children.split("") : [];
+  const charArray = children.split("");
 
   return (
     <Wrapper className={className}>
@@ -45,7 +42,7 @@ export default function StaggeredText({
         animate={isInView ? "visible" : "hidden"}
         variants={defaultAnimation}
         aria-hidden>
-        {childArray.map((char, index) => (
+        {charArray.map((char, index) => (
           <motion.span key={index} variants={defaultAnimation}>
             {char}
           </motion.span>
@@ -54,4 +51,5 @@ export default function StaggeredText({
     </Wrapper>
   );
 }
+
 `;
