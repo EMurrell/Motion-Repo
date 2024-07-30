@@ -1,6 +1,8 @@
 export const staggeredTextCode = `
 "use client"; // for Next.js app router
 
+// Required props: children (string)
+
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 

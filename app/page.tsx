@@ -36,7 +36,6 @@ export default function Home() {
           animationComponent={StaggeredText}
           code={staggeredTextCode}
           animationProps={{
-            text: "Staggered Text",
             className: "text-xl sm:text-2xl lg:text-3xl mt-4",
           }}
           text="Staggered Text"
