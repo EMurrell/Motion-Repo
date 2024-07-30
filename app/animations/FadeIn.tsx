@@ -1,4 +1,4 @@
-"use client";
+"use client"; //for Next.js app router
 import { motion, useReducedMotion } from "framer-motion";
 import { ReactNode } from "react";
 
