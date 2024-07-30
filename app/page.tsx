@@ -8,8 +8,8 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center p-2 sm:p-6 lg:p-24">
       <div className="mx-auto max-w-5xl w-full">
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl">Motion Repo</h1>
-        <p>
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl">Motion Repo</h1>
+        <p className="text-sm sm:text-base mt-9 font-light">
           This app showcases a variety of animations built using Framer Motion.
           To get started, ensure you have{" "}
           <a
@@ -28,18 +28,14 @@ export default function Home() {
           motion.span, to create smooth and dynamic transitions. These elements
           are the backbone of our animation components.
         </p>
-        <p>
-          Copy and paste the provided code into your own files. Then, import
-          these components into the desired component where you want to use the
-          animations, and use them as their corresponding elements (e.g., div,
-          span, etc.). Each animation component may have optional props that you
-          can customize to suit your needs.
-        </p>
-        <p>
-          our animation components are designed to be accessible and can be
-          styled using Tailwind CSS just as you would style any other element.
-          Explore the examples and copy the code snippets to bring engaging
-          animations to your own applications effortlessly!
+        <p className="text-sm sm:text-base mt-2 mb-9 font-light">
+          Copy and paste the provided code into your own files. Then import them
+          wherever you want to add an animation, and use them as their
+          corresponding elements (e.g., div, span, etc.). Each animation
+          component is designed to be accessible, and can be customized or
+          styled as needed. They may also support additional props for easy
+          customization, allowing you to control various parameters such as
+          duration, delay, and other animation-specific settings.
         </p>
         <CodePreview
           animationComponent={FadeIn}

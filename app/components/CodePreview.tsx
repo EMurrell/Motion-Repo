@@ -2,7 +2,7 @@
 
 import { useState, ComponentType } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { coy as style } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { vs as style } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { Switch, Label, Field } from "@headlessui/react";
 import {
@@ -84,7 +84,13 @@ export default function CodePreview({
       </AnimationComponent>
       {showCode && (
         <div className="mt-4">
-          <SyntaxHighlighter language="jsx" style={style} className="rounded">
+          <SyntaxHighlighter
+            language="jsx"
+            style={style}
+            className="rounded-2xl"
+            customStyle={{
+              fontSize: "1rem",
+            }}>
             {code}
           </SyntaxHighlighter>
         </div>
