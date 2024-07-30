@@ -13,10 +13,7 @@ import {
 } from "@heroicons/react/24/outline";
 
 interface CodePreviewProps {
-  animationComponent: ComponentType<{
-    children: ReactNode;
-    [key: string]: any;
-  }>;
+  animationComponent: ComponentType<any>;
   code: string;
   animationProps?: { [key: string]: any };
   text: string;
@@ -83,7 +80,7 @@ export default function CodePreview({
         </CopyToClipboard>
       </div>
       <AnimationComponent key={resetKey} {...animationProps}>
-        <div className="text-3xl sm:text-4xl lg:text-5xl">{text}</div>
+        {text}
       </AnimationComponent>
       {showCode && (
         <div className="mt-4">
