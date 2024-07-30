@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, ComponentType, ReactNode } from "react";
+import { useState, ComponentType } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { coy as style } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { vs as style } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { Switch, Label, Field } from "@headlessui/react";
 import {
@@ -13,10 +13,7 @@ import {
 } from "@heroicons/react/24/outline";
 
 interface CodePreviewProps {
-  animationComponent: ComponentType<{
-    children: ReactNode;
-    [key: string]: any;
-  }>;
+  animationComponent: ComponentType<any>;
   code: string;
   animationProps?: { [key: string]: any };
   text: string;
@@ -28,19 +25,19 @@ export default function CodePreview({
   animationProps = {},
   text,
 }: CodePreviewProps) {
-  const [showCode, setShowCode] = useState(false);
-  const [copied, setCopied] = useState(false);
-  const [resetKey, setResetKey] = useState(0);
-  const [rotateIcon, setRotateIcon] = useState(false);
+  let [showCode, setShowCode] = useState(false);
+  let [copied, setCopied] = useState(false);
+  let [resetKey, setResetKey] = useState(0);
+  let [rotateIcon, setRotateIcon] = useState(false);
 
   const handleCopy = () => {
     setCopied(true);
-    setTimeout(() => setCopied(false), 2000); // Reset the icon after 2 seconds
+    setTimeout(() => setCopied(false), 2000);
   };
 
   const handleReset = () => {
-    setResetKey((prev) => prev + 1); // Increment the key to force re-render
-    setRotateIcon((prev) => !prev); // Toggle the rotation state
+    setResetKey((prev) => prev + 1);
+    setRotateIcon((prev) => !prev);
   };
 
   return (
@@ -83,11 +80,17 @@ export default function CodePreview({
         </CopyToClipboard>
       </div>
       <AnimationComponent key={resetKey} {...animationProps}>
-        <div className="text-3xl sm:text-4xl lg:text-5xl">{text}</div>
+        {text}
       </AnimationComponent>
       {showCode && (
         <div className="mt-4">
-          <SyntaxHighlighter language="jsx" style={style} className="rounded">
+          <SyntaxHighlighter
+            language="jsx"
+            style={style}
+            className="rounded-2xl"
+            customStyle={{
+              fontSize: "1rem",
+            }}>
             {code}
           </SyntaxHighlighter>
         </div>

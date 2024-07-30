@@ -1,5 +1,8 @@
 export const fadeInCode = `
-"use client";
+"use client"; //for Next.js app router
+
+// Required props: children (ReactNode)
+
 import { motion, useReducedMotion } from "framer-motion";
 import { ReactNode } from "react";
 
@@ -35,8 +38,7 @@ export default function FadeIn({
       initial={initial}
       whileInView={animate}
       transition={{ duration, delay, type: "tween" }}
-      viewport={{ once, amount }}
-    >
+      viewport={{ once, amount }}>
       {children}
     </motion.div>
   );
