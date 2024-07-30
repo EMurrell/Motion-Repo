@@ -16,7 +16,7 @@ interface CodePreviewProps {
   animationComponent: ComponentType<any>;
   code: string;
   animationProps?: { [key: string]: any };
-  text: string;
+  text?: string;
 }
 
 export default function CodePreview({

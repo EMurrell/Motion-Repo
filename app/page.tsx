@@ -7,6 +7,8 @@ import Hero from "./components/Hero";
 import Counter from "./animations/Counter";
 import { counterCode } from "./code-strings/counter";
 import { fadeUpInCode } from "./code-strings/fadeUpIn";
+import WordCarousel from "./animations/WordCarousel";
+import { wordCarouselCode } from "./code-strings/wordCarousel";
 
 export default function Home() {
   return (
@@ -36,10 +38,18 @@ export default function Home() {
           animationComponent={StaggeredText}
           code={staggeredTextCode}
           animationProps={{
-            text: "Staggered Text",
             className: "text-xl sm:text-2xl lg:text-3xl mt-4",
           }}
           text="Staggered Text"
+        />
+        <CodePreview
+          animationComponent={WordCarousel}
+          code={wordCarouselCode}
+          animationProps={{
+            words: ["Astounding", "Stunning", "Dramatic", "Word Carousel"],
+            className: "text-xl sm:text-2xl lg:text-3xl mt-4",
+            loop: false,
+          }}
         />
         <CodePreview
           animationComponent={Counter}
