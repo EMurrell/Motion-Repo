@@ -1,4 +1,7 @@
 "use client"; //for Next.js app router
+
+// Required props: from (number), to (number)
+
 import {
   KeyframeOptions,
   animate,

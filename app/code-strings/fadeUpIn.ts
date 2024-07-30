@@ -1,3 +1,4 @@
+export const fadeUpInCode = `
 "use client"; //for Next.js app router
 
 // Required props: children (ReactNode)
@@ -5,7 +6,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { ReactNode } from "react";
 
-interface FadeInProps {
+interface FadeUpInProps {
   children: ReactNode;
   duration?: number;
   delay?: number;
@@ -15,15 +16,15 @@ interface FadeInProps {
   once?: boolean;
 }
 
-export default function FadeIn({
+export default function FadeUpIn({
   children,
   duration = 0.4,
   delay = 0,
   className = "",
-  up = false,
+  up = true,
   amount = "all",
   once = true,
-}: FadeInProps) {
+}: FadeUpInProps) {
   const shouldReduceMotion = useReducedMotion();
   const initial = shouldReduceMotion
     ? { opacity: 0 }
@@ -42,3 +43,4 @@ export default function FadeIn({
     </motion.div>
   );
 }
+`;

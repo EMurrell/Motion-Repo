@@ -1,43 +1,71 @@
 export const counterCode = `
 "use client"; //for Next.js app router
-import { motion, useReducedMotion } from "framer-motion";
-import { ReactNode } from "react";
 
-interface FadeInProps {
-  children: ReactNode;
-  duration?: number;
+// Required props: from (number), to (number)
+
+import {
+  KeyframeOptions,
+  animate,
+  useIsomorphicLayoutEffect,
+  useInView,
+} from "framer-motion";
+import { useRef } from "react";
+
+type CounterProps = {
+  from: number;
+  to: number;
+  animationOptions?: KeyframeOptions;
   delay?: number;
+  decimalPlaces?: number;
   className?: string;
-  up?: boolean;
-  amount?: "all" | "some" | number;
-  once?: boolean;
-}
+};
 
-export default function FadeIn({
-  children,
-  duration = 0.4,
+export default function Counter({
+  from,
+  to,
+  animationOptions,
   delay = 0,
+  decimalPlaces = 0,
   className = "",
-  up = false,
-  amount = "all",
-  once = true,
-}: FadeInProps) {
-  const shouldReduceMotion = useReducedMotion();
-  const initial = shouldReduceMotion
-    ? { opacity: 0 }
-    : { y: up ? 30 : 0, opacity: 0 };
+}: CounterProps) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const inView = useInView(ref, { once: true });
 
-  const animate = shouldReduceMotion ? { opacity: 1 } : { y: 0, opacity: 1 };
+  const formatNumber = (value: number) => {
+    return new Intl.NumberFormat("en-US", {
+      minimumFractionDigits: decimalPlaces,
+      maximumFractionDigits: decimalPlaces,
+    }).format(value);
+  };
 
-  return (
-    <motion.div
-      className={className}
-      initial={initial}
-      whileInView={animate}
-      transition={{ duration, delay, type: "tween" }}
-      viewport={{ once, amount }}>
-      {children}
-    </motion.div>
-  );
+  useIsomorphicLayoutEffect(() => {
+    const element = ref.current;
+
+    if (!element) return;
+    if (!inView) return;
+
+    if (window.matchMedia("(prefers-reduced-motion)").matches) {
+      element.textContent = formatNumber(to);
+      return;
+    }
+
+    element.textContent = formatNumber(from);
+
+    const controls = animate(from, to, {
+      duration: 0.6,
+      ease: "easeOut",
+      delay,
+      ...animationOptions,
+      onUpdate(value) {
+        element.textContent = formatNumber(value);
+      },
+    });
+
+    return () => {
+      controls.stop();
+    };
+  }, [ref, inView, from, to, decimalPlaces]);
+
+  return <span ref={ref} className={className} />;
 }
 `;

@@ -1,4 +1,7 @@
 "use client"; //for Next.js app router
+
+// Required props: children (ReactNode)
+
 import { motion, useInView } from "framer-motion";
 import { useRef, ReactNode } from "react";
 
