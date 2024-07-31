@@ -3,7 +3,7 @@ import TwitterShare from "./TwitterShare";
 export default function Hero() {
   return (
     <section>
-      <div className="w-full flex justify-between">
+      <div className="w-full flex justify-between items-end">
         <h1 className="text-5xl lg:text-6xl">Motion Repo</h1>
         <TwitterShare className="hidden lg:flex" />
       </div>
