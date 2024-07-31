@@ -6,7 +6,7 @@ import StaggeredText from "./animations/StaggeredText";
 import Hero from "./components/Hero";
 import Counter from "./animations/Counter";
 import { counterCode } from "./code-strings/counter";
-import { fadeUpInCode } from "./code-strings/fadeUpIn";
+import { fadeUpCode } from "./code-strings/fadeUp";
 import WordCarousel from "./animations/WordCarousel";
 import { wordCarouselCode } from "./code-strings/wordCarousel";
 
@@ -26,7 +26,7 @@ export default function Home() {
         />
         <CodePreview
           animationComponent={FadeIn}
-          code={fadeUpInCode}
+          code={fadeUpCode}
           animationProps={{
             up: true,
             delay: 0.2,
