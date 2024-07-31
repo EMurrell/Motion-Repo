@@ -34,7 +34,7 @@ export default function Home() {
             delay: 0.2,
             className: "",
           }}
-          text="Fade Up and In"
+          text="Fade Up"
         />
         <CodePreview
           animationComponent={StaggeredText}
@@ -64,7 +64,7 @@ export default function Home() {
             className: "",
             amount: "all",
           }}
-          text="Counter Animation"
+          label="Counter"
         />
       </div>
     </main>

@@ -10,6 +10,7 @@ interface CodePreviewProps {
   code: string;
   animationProps?: { [key: string]: any };
   text?: string;
+  label?: string;
 }
 
 export default function CodePreview({
@@ -17,6 +18,7 @@ export default function CodePreview({
   code,
   animationProps = {},
   text,
+  label,
 }: CodePreviewProps) {
   const [showCode, setShowCode] = useState(false);
   const [copied, setCopied] = useState(false);
@@ -44,12 +46,12 @@ export default function CodePreview({
         rotateIcon={rotateIcon}
         code={code}
       />
-      <AnimationComponent
-        key={resetKey}
-        {...animationProps}
-        className="text-2xl sm:text-3xl lg:text-4xl flex flex-col mt-8 lg:mt-12">
-        {text}
-      </AnimationComponent>
+      <div className="flex text-2xl sm:text-3xl lg:text-4xl mt-8 sm:mt-6 lg:mt-12">
+        <span>{label} &nbsp;</span>
+        <AnimationComponent key={resetKey} {...animationProps} className="">
+          {text}
+        </AnimationComponent>
+      </div>
       {showCode && (
         <div className="mt-16">
           <SyntaxHighlighter
