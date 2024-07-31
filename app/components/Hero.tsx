@@ -1,9 +1,14 @@
+import TwitterShare from "./TwitterShare";
+
 export default function Hero() {
   return (
-    <section className="text-balance">
-      <h1 className="text-5xl lg:text-6xl">Motion Repo</h1>
+    <section>
+      <div className="w-full flex justify-between">
+        <h1 className="text-5xl lg:text-6xl">Motion Repo</h1>
+        <TwitterShare className="hidden lg:flex" />
+      </div>
       <div className=" flex flex-col lg:flex-row justify-between w-full">
-        <div className="lg:w-[70%] text-sm sm:text-base mt-4 lg:mt-9 font-light space-y-2">
+        <div className="max-w-[90%] lg:w-[70%] text-sm sm:text-base mt-9 font-light space-y-2 lg:pr-28">
           <p>
             This project features a variety of animations built using Framer
             Motion.
@@ -30,7 +35,7 @@ export default function Hero() {
           </p>
         </div>
 
-        <ul className="text-xs sm:text-sm font-light my-9 lg:w-[30%] lg:p-4 space-y-2 lg:border rounded-2xl">
+        <ul className="text-xs sm:text-sm font-light my-6 lg:my-9 lg:w-[30%] max-w-[90%] lg:p-4 space-y-2 lg:border rounded-2xl">
           <li>
             <span className="font-semibold">Customizable: </span>Adjust
             parameters like duration and delay via props.
@@ -45,6 +50,7 @@ export default function Hero() {
           </li>
         </ul>
       </div>
+      <TwitterShare className="lg:hidden" />
     </section>
   );
 }
