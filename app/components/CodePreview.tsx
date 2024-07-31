@@ -57,7 +57,7 @@ export default function CodePreview({
           <SyntaxHighlighter
             language="jsx"
             style={style}
-            className="rounded-2xl"
+            className="rounded-2xl !border-none !bg-gray-100/80"
             customStyle={{ fontSize: "1rem" }}>
             {code}
           </SyntaxHighlighter>
