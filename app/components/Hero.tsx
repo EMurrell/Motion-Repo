@@ -1,12 +1,16 @@
+import TwitterShare from "./TwitterShare";
+
 export default function Hero() {
   return (
-    <section className="text-balance">
-      <h1 className="text-5xl lg:text-6xl">Motion Repo</h1>
+    <section>
+      <div className="w-full flex justify-between">
+        <h1 className="text-5xl lg:text-6xl font-medium">Motion Repo</h1>
+        <TwitterShare className="hidden lg:flex mt-auto" />
+      </div>
       <div className=" flex flex-col lg:flex-row justify-between w-full">
-        <div className="lg:w-[70%] text-sm sm:text-base mt-4 lg:mt-9 font-light space-y-2">
-          <p>
-            This project features a variety of animations built using Framer
-            Motion.
+        <div className="max-w-[90%] lg:w-[70%] text-sm mt-4 font-light space-y-2 lg:pr-28">
+          <p className="text-lg lg:text-xl text-balance mb-4 font-medium">
+            A collection of animations built with Framer Motion.
           </p>
           <p>
             {" "}
@@ -30,21 +34,22 @@ export default function Hero() {
           </p>
         </div>
 
-        <ul className="text-xs sm:text-sm font-light my-9 lg:w-[30%] lg:p-4 space-y-2 lg:border rounded-2xl">
+        <ul className="text-xs sm:text-sm font-light my-4 lg:w-[30%] max-w-[90%] lg:p-4 space-y-2 lg:border rounded-2xl">
           <li>
-            <span className="font-semibold">Customizable: </span>Adjust
-            parameters like duration and delay via props.
+            <span className="font-medium">Customizable: </span>Adjust parameters
+            like duration and delay via props.
           </li>
           <li>
-            <span className="font-semibold">Accessible: </span>Designed with
+            <span className="font-medium">Accessible: </span>Designed with
             accessibility in mind.
           </li>
           <li>
-            <span className="font-semibold">Flexible: </span>Style and customize
+            <span className="font-medium">Flexible: </span>Style and customize
             as needed.
           </li>
         </ul>
       </div>
+      <TwitterShare className="lg:hidden" />
     </section>
   );
 }
