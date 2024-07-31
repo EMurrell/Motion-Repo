@@ -20,7 +20,7 @@ export default function Home() {
           code={fadeInCode}
           animationProps={{
             up: false,
-            className: "text-xl sm:text-2xl lg:text-3xl mt-4",
+            className: "",
           }}
           text="Fade In"
         />
@@ -30,7 +30,7 @@ export default function Home() {
           animationProps={{
             up: true,
             delay: 0.2,
-            className: "text-xl sm:text-2xl lg:text-3xl mt-4",
+            className: "",
           }}
           text="Fade Up and In"
         />
@@ -38,7 +38,7 @@ export default function Home() {
           animationComponent={StaggeredText}
           code={staggeredTextCode}
           animationProps={{
-            className: "text-xl sm:text-2xl lg:text-3xl mt-4",
+            className: "",
           }}
           text="Staggered Text"
         />
@@ -47,7 +47,7 @@ export default function Home() {
           code={wordCarouselCode}
           animationProps={{
             words: ["Astounding", "Stunning", "Dramatic", "Word Carousel"],
-            className: "text-xl sm:text-2xl lg:text-3xl mt-4",
+            className: "",
             loop: false,
           }}
         />
@@ -58,7 +58,7 @@ export default function Home() {
             from: 0,
             to: 100,
             duration: 2,
-            className: "text-xl sm:text-2xl lg:text-3xl mt-4",
+            className: "",
           }}
           text="Counter Animation"
         />
