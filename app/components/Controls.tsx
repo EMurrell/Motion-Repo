@@ -52,7 +52,7 @@ export default function Controls({
       </Field>
       <button
         onClick={handleReset}
-        className="flex items-center mx-4"
+        className="flex items-center mx-4 lg:mx-6"
         aria-label="Reset animation">
         <ArrowPathIcon
           className={`h-5 w-5 transition-transform ${

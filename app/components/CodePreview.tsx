@@ -34,7 +34,7 @@ export default function CodePreview({
   };
 
   return (
-    <div className="border rounded-2xl p-4 lg:pl-24 lg:py-4 lg:pr-4 my-4 w-full min-h-[190px] lg:min-h-[240px]">
+    <div className="border rounded-2xl p-4 lg:pl-24 lg:pr-8 my-4 w-full min-h-[190px] lg:min-h-[240px]">
       <Controls
         showCode={showCode}
         setShowCode={setShowCode}
