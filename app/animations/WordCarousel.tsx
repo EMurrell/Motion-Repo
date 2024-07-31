@@ -23,7 +23,7 @@ interface WordCarouselProps {
 export default function WordCarousel({
   words,
   transitionDuration = 0.5,
-  intervalDuration = 2000,
+  intervalDuration = 1500,
   className = "",
   loop = false,
 }: WordCarouselProps): JSX.Element {
