@@ -34,7 +34,7 @@ export default function CodePreview({
   };
 
   return (
-    <div className="border rounded-2xl p-4 lg:pl-24 lg:py-4 lg:pr-4 my-4 w-full min-h-[240px]">
+    <div className="border rounded-2xl p-4 lg:pl-24 lg:py-4 lg:pr-4 my-4 w-full min-h-[190px] lg:min-h-[240px]">
       <Controls
         showCode={showCode}
         setShowCode={setShowCode}
@@ -47,11 +47,11 @@ export default function CodePreview({
       <AnimationComponent
         key={resetKey}
         {...animationProps}
-        className="text-xl sm:text-2xl lg:text-3xl flex flex-col mt-12">
+        className="text-2xl sm:text-3xl lg:text-4xl flex flex-col mt-8 lg:mt-12">
         {text}
       </AnimationComponent>
       {showCode && (
-        <div className="mt-4">
+        <div className="mt-16">
           <SyntaxHighlighter
             language="jsx"
             style={style}
