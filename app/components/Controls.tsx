@@ -7,6 +7,7 @@ import {
   ClipboardDocumentIcon,
   ClipboardDocumentCheckIcon,
   ArrowPathIcon,
+  EyeIcon,
 } from "@heroicons/react/24/outline";
 
 interface ControlsProps {
@@ -29,38 +30,50 @@ export default function Controls({
   code,
 }: ControlsProps) {
   return (
-    <div className="flex justify-end items-center mb-4">
-      <button onClick={handleReset} className="flex items-center mr-4 text-xs">
+    <div className="flex justify-end items-center mb-4 text-[11px]">
+      <Field className="flex items-center">
+        <div className="relative">
+          <Switch
+            checked={showCode}
+            onChange={setShowCode}
+            className="group inline-flex h-8 w-44 items-center rounded-lg bg-gray-200 data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50 relative z-10"
+            aria-label="Toggle code view">
+            <Label className="absolute left-3 text-black z-20 flex font-medium">
+              <EyeIcon className="w-4 h-4 mr-1" />
+              Preview
+            </Label>
+            <Label className="absolute right-5 text-black z-20 flex font-medium">
+              <CodeBracketIcon className="w-4 h-4 mr-1" />
+              Code
+            </Label>
+            <span className="h-[26px] w-20 translate-x-1 rounded-[7px] bg-white transition group-data-[checked]:translate-x-[92px] z-10" />
+          </Switch>
+        </div>
+      </Field>
+      <button
+        onClick={handleReset}
+        className="flex items-center mx-4"
+        aria-label="Reset animation">
         <ArrowPathIcon
-          className={`h-5 w-5 mr-2 transition-transform ${
+          className={`h-5 w-5 transition-transform ${
             rotateIcon ? "rotate-180" : ""
           }`}
         />
-        Refresh
       </button>
-      <Field className="flex items-center">
-        <Switch
-          checked={showCode}
-          onChange={setShowCode}
-          className="group inline-flex h-6 w-11 items-center rounded-full bg-gray-200 data-[checked]:bg-blue-600 data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50">
-          <span className="size-4 translate-x-1 rounded-full bg-white transition group-data-[checked]:translate-x-6" />
-        </Switch>
-        <Label
-          className={`${
-            showCode ? "text-blue-600" : ""
-          } text-xs cursor-pointer flex items-center`}>
-          <CodeBracketIcon className="w-5 h-5 ml-2 mr-1" />
-          Show Code
-        </Label>
-      </Field>
       <CopyToClipboard text={code} onCopy={handleCopy}>
-        <button className=" px-3 py-1 rounded flex items-center ml-4 text-xs">
+        <button
+          className="flex items-center"
+          aria-label={copied ? "Code copied" : "Copy code"}
+          aria-live="polite">
           {copied ? (
-            <ClipboardDocumentCheckIcon className="h-5 w-5 mr-2" />
+            <>
+              <ClipboardDocumentCheckIcon className="h-5 w-5" />
+            </>
           ) : (
-            <ClipboardDocumentIcon className="h-5 w-5 mr-2" />
+            <>
+              <ClipboardDocumentIcon className="h-5 w-5" />
+            </>
           )}
-          {copied ? "Copied!" : "Copy Code"}
         </button>
       </CopyToClipboard>
     </div>
