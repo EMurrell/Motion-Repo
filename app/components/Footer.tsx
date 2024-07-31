@@ -2,7 +2,7 @@ import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 
 export default function Footer() {
   return (
-    <footer className="w-full p-2 sm:p-6 lg:p-24 border-t flex flex-col items-center justify-centertext-center text-gray-500">
+    <footer className="w-full p-2 sm:p-6 lg:p-24 border-t flex flex-col items-center justify-center text-center text-gray-500">
       <p>Built with Next.js, Tailwind CSS, and Framer Motion by EMurrell</p>
       <a
         href="https://github.com/EMurrell/animations"
