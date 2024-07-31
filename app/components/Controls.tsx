@@ -38,11 +38,11 @@ export default function Controls({
             onChange={setShowCode}
             className="group inline-flex h-8 w-40 items-center rounded-lg bg-gray-200/60 data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50 relative z-10"
             aria-label="Toggle code view">
-            <Label className="absolute left-2 text-black z-20 flex font-medium cursor-pointer text-black/70 hover:text-black transition ease-in-out duration-100">
+            <Label className="absolute left-2 text-black z-20 flex font-medium cursor-pointer text-black/75 hover:text-black transition ease-in-out duration-100">
               <EyeIcon className="w-4 h-4 mr-1" />
               Preview
             </Label>
-            <Label className="absolute right-4 text-black z-20 flex font-medium cursor-pointer text-black/70 hover:text-black transition ease-in-out duration-100">
+            <Label className="absolute right-4 text-black z-20 flex font-medium cursor-pointer text-black/75 hover:text-black transition ease-in-out duration-100">
               <CodeBracketIcon className="w-4 h-4 mr-1" />
               Code
             </Label>
@@ -52,7 +52,7 @@ export default function Controls({
       </Field>
       <button
         onClick={handleReset}
-        className="flex items-center mx-4 lg:mx-6 text-black/70 hover:text-black transition ease-in-out duration-100"
+        className="flex items-center mx-4 lg:mx-6 text-black/75 hover:text-black transition ease-in-out duration-100"
         aria-label="Reset animation">
         <ArrowPathIcon
           className={`h-5 w-5 transition-transform ${
@@ -62,7 +62,7 @@ export default function Controls({
       </button>
       <CopyToClipboard text={code} onCopy={handleCopy}>
         <button
-          className="flex items-center text-black/70 hover:text-black transition ease-in-out duration-100"
+          className="flex items-center text-black/75 hover:text-black transition ease-in-out duration-100"
           aria-label={copied ? "Code copied" : "Copy code"}
           aria-live="polite">
           {copied ? (
