@@ -9,6 +9,7 @@ import { counterCode } from "./code-strings/counter";
 import { fadeUpCode } from "./code-strings/fadeUp";
 import WordCarousel from "./animations/WordCarousel";
 import { wordCarouselCode } from "./code-strings/wordCarousel";
+import { delay } from "framer-motion";
 
 export default function Home() {
   return (
@@ -21,6 +22,8 @@ export default function Home() {
           animationProps={{
             up: false,
             className: "",
+            delay: 0.2,
+            duration: 1,
           }}
           text="Fade In"
         />
@@ -57,8 +60,10 @@ export default function Home() {
           animationProps={{
             from: 0,
             to: 100,
-            duration: 2,
+            duration: 3,
+            delay: 0.4,
             className: "",
+            amount: "all",
           }}
           text="Counter Animation"
         />
