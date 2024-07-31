@@ -36,17 +36,17 @@ export default function Controls({
           <Switch
             checked={showCode}
             onChange={setShowCode}
-            className="group inline-flex h-8 w-44 items-center rounded-lg bg-gray-200 data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50 relative z-10"
+            className="group inline-flex h-8 w-40 items-center rounded-lg bg-gray-200 data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50 relative z-10"
             aria-label="Toggle code view">
-            <Label className="absolute left-3 text-black z-20 flex font-medium">
+            <Label className="absolute left-2 text-black z-20 flex font-medium">
               <EyeIcon className="w-4 h-4 mr-1" />
               Preview
             </Label>
-            <Label className="absolute right-5 text-black z-20 flex font-medium">
+            <Label className="absolute right-4 text-black z-20 flex font-medium">
               <CodeBracketIcon className="w-4 h-4 mr-1" />
               Code
             </Label>
-            <span className="h-[26px] w-20 translate-x-1 rounded-[7px] bg-white transition group-data-[checked]:translate-x-[92px] z-10" />
+            <span className="h-[26px] w-[72px] translate-x-1 rounded-[7px] bg-white transition group-data-[checked]:translate-x-[84px] z-10" />
           </Switch>
         </div>
       </Field>
