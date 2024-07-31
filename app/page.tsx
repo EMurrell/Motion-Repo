@@ -9,7 +9,6 @@ import { counterCode } from "./code-strings/counter";
 import { fadeUpCode } from "./code-strings/fadeUp";
 import WordCarousel from "./animations/WordCarousel";
 import { wordCarouselCode } from "./code-strings/wordCarousel";
-import { delay } from "framer-motion";
 
 export default function Home() {
   return (
