@@ -47,7 +47,7 @@ export default function CodePreview({
       <AnimationComponent
         key={resetKey}
         {...animationProps}
-        className="text-xl sm:text-2xl lg:text-3xl flex flex-col h-full">
+        className="text-xl sm:text-2xl lg:text-3xl flex flex-col mt-12">
         {text}
       </AnimationComponent>
       {showCode && (
