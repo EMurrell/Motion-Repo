@@ -12,7 +12,7 @@ import { wordCarouselCode } from "./code-strings/wordCarousel";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center p-2 sm:p-6 lg:p-24 pt-16 sm:pt-40 lg:pt-44 ">
+    <main className="flex min-h-screen flex-col items-center p-2 sm:p-6 lg:p-24 pt-16 sm:pt-20 lg:pt-36">
       <div className="mx-auto max-w-5xl w-full">
         <Hero />
         <CodePreview
