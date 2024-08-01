@@ -9,9 +9,8 @@ export default function Header() {
         <Image
           src="/logo.png"
           alt="Trailbridge Web Logo"
-          className=""
-          height={50}
-          width={50}
+          height={40}
+          width={40}
         />
         <div className="flex gap-2  items-center">
           <GithubLink />
