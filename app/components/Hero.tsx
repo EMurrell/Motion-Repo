@@ -3,7 +3,7 @@ import TwitterShare from "./TwitterShare";
 export default function Hero() {
   return (
     <section>
-      <div className="w-full flex flex-col lg:flex-row justify-between">
+      <div className="w-full flex flex-col lg:flex-row justify-between pb-4">
         <div className="flex flex-col lg:w-[70%] mt-auto pr-12 lg:pr-36">
           <h1 className="text-6xl lg:text-7xl font-medium">Motion Repo</h1>
 
@@ -13,7 +13,7 @@ export default function Hero() {
           </h2>
         </div>
 
-        <p className="lg:w-[30%] text-xs sm:text-sm font-light mb-1 pr-12 lg:pr-0 mt-4 lg:mt-0">
+        <p className="lg:w-[30%] text-xs sm:text-sm font-light pr-12 lg:pr-0 mt-4 lg:mt-auto">
           {" "}
           To get started, ensure you have{" "}
           <a
