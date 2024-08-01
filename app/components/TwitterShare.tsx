@@ -5,7 +5,7 @@ type TwitterShareProps = {
 export default function TwitterShare({ className }: TwitterShareProps) {
   return (
     <a
-      className={` ${className} h-max min-w-max bg-white rounded-full p-2 text-gray-900 transition ease-in-out duration-200 hover:bg-gray-100/80 focus:outline-none focus:ring-2 focus:ring-blue-500`}
+      className={` ${className} h-max min-w-max bg-white rounded-full p-2 text-gray-900 transition ease-in-out duration-200 hover:bg-gray-100/80 focus:outline-none focus:ring-2 focus:ring-black`}
       href="https://twitter.com/intent/tweet?text=Checkout%20this%20resource%20for%20animations%20for%20developers%20by%20%40EMurrell%21&amp;url=https%3A%2F%2Fmotionrepo.com"
       target="_blank"
       rel="noopener noreferrer"

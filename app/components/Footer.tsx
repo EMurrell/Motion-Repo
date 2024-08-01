@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import GithubLink from "./GithubLink";
 import TwitterShare from "./TwitterShare";
 

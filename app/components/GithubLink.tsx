@@ -2,7 +2,7 @@ export default function GithubLink() {
   return (
     <a
       href="https://github.com/EMurrell/Motion-Repo"
-      className="h-max min-w-max bg-white rounded-full p-2 text-gray-900 transition ease-in-out duration-200 hover:bg-gray-100/80"
+      className="h-max min-w-max bg-white rounded-full p-2 text-gray-900 transition ease-in-out duration-200 hover:bg-gray-100/80 focus:outline-none focus:ring-2 focus:ring-black"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Visit the GitHub repository for Motion Repo">
