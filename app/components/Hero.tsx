@@ -5,13 +5,12 @@ export default function Hero() {
     <section>
       <div className="w-full flex justify-between">
         <h1 className="text-5xl lg:text-6xl font-medium">Motion Repo</h1>
-        <TwitterShare className="hidden lg:flex mt-auto" />
       </div>
       <div className=" flex flex-col lg:flex-row justify-between w-full">
-        <div className="max-w-[90%] lg:w-[70%] text-sm mt-4 font-light space-y-2 lg:pr-28">
-          <p className="text-lg lg:text-xl text-balance mb-4 font-medium">
+        <div className="max-w-[90%] lg:w-[70%] text-sm mt-2 font-light space-y-2 lg:pr-28">
+          <h2 className="text-[1.125rem] leading-[1.5rem] lg:text-lg text-balance mb-4 font-medium">
             A collection of animations built with Framer Motion.
-          </p>
+          </h2>
           <p>
             {" "}
             To get started, ensure you have{" "}
@@ -49,7 +48,6 @@ export default function Hero() {
           </li>
         </ul>
       </div>
-      <TwitterShare className="lg:hidden" />
     </section>
   );
 }
