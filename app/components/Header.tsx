@@ -1,5 +1,6 @@
 import Image from "next/image";
 import TwitterShare from "./TwitterShare";
+import GithubLink from "./GithubLink";
 
 export default function Header() {
   return (
@@ -12,7 +13,10 @@ export default function Header() {
           height={50}
           width={50}
         />
-        <TwitterShare />
+        <div className="flex gap-2  items-center">
+          <GithubLink />
+          <TwitterShare />
+        </div>
       </div>
     </header>
   );
