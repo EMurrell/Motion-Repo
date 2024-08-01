@@ -46,7 +46,7 @@ export default function CodePreview({
         rotateIcon={rotateIcon}
         code={code}
       />
-      <div className="flex text-2xl sm:text-3xl lg:text-4xl mt-8 sm:mt-6 lg:mt-12">
+      <div className="flex text-2xl sm:text-3xl lg:text-4xl mt-6 sm:mt-5 lg:mt-11">
         <span>{label} &nbsp;</span>
         <AnimationComponent key={resetKey} {...animationProps} className="">
           {text}
