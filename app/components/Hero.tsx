@@ -7,13 +7,13 @@ export default function Hero() {
         <div className="flex flex-col lg:w-[70%] mt-auto pr-12 lg:pr-36">
           <h1 className="text-6xl lg:text-7xl font-medium">Motion Repo</h1>
 
-          <h2 className="text-[1.125rem] leading-[1.5rem] lg:text-[18px] mt-4">
+          <h2 className="text-[1.125rem] leading-[1.5rem] lg:text-[18px] mt-2">
             A collection of accessible, customizable animations built with
             Framer Motion.
           </h2>
         </div>
 
-        <p className="lg:w-[30%] text-xs sm:text-sm font-light pr-12 lg:pr-0 mt-4 lg:mt-auto">
+        <p className="lg:w-[30%] text-xs sm:text-sm font-light pr-12 lg:pr-0 mt-2 lg:mt-auto">
           {" "}
           To get started, ensure you have{" "}
           <a
