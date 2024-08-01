@@ -52,7 +52,7 @@ export default function Controls({
       </Field>
       <button
         onClick={handleReset}
-        className="rounded-full p-2 flex items-center mx-2 lg:mx-4  transition ease-in-out duration-100 hover:bg-gray-100/80"
+        className="rounded-full p-2 flex items-center ml-2 transition ease-in-out duration-100 hover:bg-gray-100/80"
         aria-label="Reset animation">
         <ArrowPathIcon
           className={`h-5 w-5 transition-transform ${
