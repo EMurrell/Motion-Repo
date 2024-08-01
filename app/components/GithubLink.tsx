@@ -4,7 +4,8 @@ export default function GithubLink() {
       href="https://github.com/EMurrell/Motion-Repo"
       className="h-max min-w-max bg-white rounded-full p-2 text-gray-900 transition ease-in-out duration-200 hover:bg-gray-100/80"
       target="_blank"
-      rel="noopener noreferrer">
+      rel="noopener noreferrer"
+      aria-label="Visit the GitHub repository for Motion Repo">
       <svg
         aria-hidden="true"
         viewBox="0 0 24 24"
