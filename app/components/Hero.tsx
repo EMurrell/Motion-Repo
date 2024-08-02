@@ -29,7 +29,7 @@ export default function Hero() {
           </a>{" "}
           installed and configured in your project. Copy the provided code into
           your files. Import and use the animation components like regular
-          elements (e.g., div, span).
+          elements (div, span, etc).
         </p>
 
         {/* <ul className="text-xs sm:text-sm font-light my-4 lg:w-[30%] max-w-[90%] lg:p-4 space-y-2 lg:border rounded-2xl">
