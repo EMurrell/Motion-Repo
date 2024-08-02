@@ -1,6 +1,4 @@
-"use client"; //for Next.js app router
-
-// Required props: from (number), to (number)
+"use client"; // for Next.js app router
 
 import {
   KeyframeOptions,
@@ -41,14 +39,15 @@ export default function Counter({
     const element = ref.current;
 
     if (!element) return;
-    if (!inView) return;
+    if (!inView) {
+      element.textContent = formatNumber(from);
+      return;
+    }
 
     if (window.matchMedia("(prefers-reduced-motion)").matches) {
       element.textContent = formatNumber(to);
       return;
     }
-
-    element.textContent = formatNumber(from);
 
     const controls = animate(from, to, {
       duration: 0.6,
@@ -58,6 +57,9 @@ export default function Counter({
       onUpdate(value) {
         element.textContent = formatNumber(value);
       },
+      onComplete() {
+        element.textContent = formatNumber(to); // Ensure final value is set
+      },
     });
 
     return () => {
@@ -65,5 +67,5 @@ export default function Counter({
     };
   }, [ref, inView, from, to, decimalPlaces]);
 
-  return <span ref={ref} className={className} />;
+  return <span ref={ref} className={className} aria-live="polite" />;
 }
