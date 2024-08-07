@@ -48,7 +48,7 @@ export default function Home() {
           animationComponent={WordCarousel}
           code={wordCarouselCode}
           animationProps={{
-            words: ["Astounding", "Stunning", "Dramatic", "Word Carousel"],
+            words: ["Build", "Deploy", "Scale", "Word Carousel"],
             className: "",
             loop: false,
           }}
