@@ -10,6 +10,7 @@ import { fadeUpCode } from "./code-strings/fadeUp";
 import WordCarousel from "./animations/WordCarousel";
 import { wordCarouselCode } from "./code-strings/wordCarousel";
 import TextUnderline from "./animations/TextUnderline";
+import { textUnderlineCode } from "./code-strings/textUnderline";
 
 export default function Home() {
   return (
@@ -69,11 +70,11 @@ export default function Home() {
         />
         <CodePreview
           animationComponent={TextUnderline}
-          code={fadeUpCode}
+          code={textUnderlineCode}
           animationProps={{
             className: "",
           }}
-          text="Underline Animation"
+          text="Underline (hover)"
         />
       </div>
     </main>
