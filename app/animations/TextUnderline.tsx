@@ -1,7 +1,7 @@
-interface TextUnderlineProps {
+type TextUnderlineProps = {
   text: string;
   className?: string;
-}
+};
 
 export default function TextUnderline({
   text,

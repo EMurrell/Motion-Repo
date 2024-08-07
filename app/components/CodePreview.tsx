@@ -5,13 +5,13 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vs as style } from "react-syntax-highlighter/dist/esm/styles/prism";
 import Controls from "./Controls"; // Import the Controls component
 
-interface CodePreviewProps {
+type CodePreviewProps = {
   animationComponent: ComponentType<any>;
   code: string;
   animationProps?: { [key: string]: any };
   text?: string;
   label?: string;
-}
+};
 
 export default function CodePreview({
   animationComponent: AnimationComponent,

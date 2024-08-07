@@ -13,7 +13,7 @@ import {
   useInView,
 } from "framer-motion";
 
-interface WordCarouselProps {
+type WordCarouselProps = {
   words: string[];
   transitionDuration?: number;
   intervalDuration?: number;
