@@ -9,6 +9,7 @@ import { counterCode } from "./code-strings/counter";
 import { fadeUpCode } from "./code-strings/fadeUp";
 import WordCarousel from "./animations/WordCarousel";
 import { wordCarouselCode } from "./code-strings/wordCarousel";
+import TextUnderline from "./animations/TextUnderline";
 
 export default function Home() {
   return (
@@ -65,6 +66,14 @@ export default function Home() {
             amount: "all",
           }}
           label="Counter"
+        />
+        <CodePreview
+          animationComponent={TextUnderline}
+          code={fadeUpCode}
+          animationProps={{
+            className: "",
+          }}
+          text="Underline Animation"
         />
       </div>
     </main>

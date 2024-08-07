@@ -1,3 +1,4 @@
+export const textUnderlineCode = `
 "use client";
 
 type TextUnderlineProps = {
@@ -16,3 +17,4 @@ export default function TextUnderline({
     </span>
   );
 }
+`;
