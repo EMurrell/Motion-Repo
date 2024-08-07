@@ -47,7 +47,7 @@ export default function CodePreview({
         code={code}
       />
       <div className="flex text-2xl sm:text-3xl lg:text-4xl mt-6 sm:mt-5 lg:mt-11">
-        <span>{label} &nbsp;</span>
+        <span>{label}&nbsp;</span>
         <AnimationComponent key={resetKey} {...animationProps} className="">
           {text}
         </AnimationComponent>
