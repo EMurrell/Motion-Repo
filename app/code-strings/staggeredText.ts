@@ -1,9 +1,7 @@
 export const staggeredTextCode = `
 "use client"; // for Next.js app router
 
-// Required props: children (string)
-
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, useReducedMotion } from "framer-motion";
 import { useRef } from "react";
 
 type StaggeredTextProps = {
@@ -11,18 +9,6 @@ type StaggeredTextProps = {
   el?: keyof JSX.IntrinsicElements;
   className?: string;
   once?: boolean;
-};
-
-const defaultAnimation = {
-  hidden: {
-    opacity: 0,
-  },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
 };
 
 export default function StaggeredText({
@@ -33,7 +19,21 @@ export default function StaggeredText({
 }: StaggeredTextProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, { amount: 0.5, once });
+  const shouldReduceMotion = useReducedMotion();
   const charArray = children.split("");
+
+  const animationVariants = shouldReduceMotion
+    ? {
+        hidden: { opacity: 0 },
+        visible: { opacity: 1 },
+      }
+    : {
+        hidden: { opacity: 0 },
+        visible: {
+          opacity: 1,
+          transition: { staggerChildren: 0.1 },
+        },
+      };
 
   return (
     <Wrapper className={className}>
@@ -42,10 +42,10 @@ export default function StaggeredText({
         ref={ref}
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
-        variants={defaultAnimation}
+        variants={animationVariants}
         aria-hidden>
         {charArray.map((char, index) => (
-          <motion.span key={index} variants={defaultAnimation}>
+          <motion.span key={index} variants={animationVariants}>
             {char}
           </motion.span>
         ))}
@@ -53,5 +53,4 @@ export default function StaggeredText({
     </Wrapper>
   );
 }
-
 `;

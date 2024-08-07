@@ -19,7 +19,7 @@ type WordCarouselProps = {
   intervalDuration?: number;
   className?: string;
   loop?: boolean;
-}
+};
 
 export default function WordCarousel({
   words,

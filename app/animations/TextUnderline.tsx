@@ -1,16 +1,18 @@
+"use client";
+
 type TextUnderlineProps = {
-  text: string;
+  children: React.ReactNode;
   className?: string;
 };
 
 export default function TextUnderline({
-  text,
+  children,
   className = "",
 }: TextUnderlineProps) {
   return (
-    <span className={`group inline-block cursor-pointer relative ${className}`}>
-      {text}
-      <span className="block max-w-0 group-hover:min-w-full transition-all transform ease-in-out duration-500 h-1 -mt-0.5 bg-sky-600 "></span>
+    <span className={`group inline-block cursor-pointer ${className}`}>
+      {children}
+      <span className="block h-0.5 lg:h-1 w-full bg-black transition-all duration-500 motion-reduce:duration-0 ease-in-out max-w-0 group-hover:max-w-full"></span>
     </span>
   );
 }

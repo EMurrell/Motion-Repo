@@ -58,7 +58,7 @@ export default function Counter({
         element.textContent = formatNumber(value);
       },
       onComplete() {
-        element.textContent = formatNumber(to); // Ensure final value is set
+        element.textContent = formatNumber(to);
       },
     });
 
