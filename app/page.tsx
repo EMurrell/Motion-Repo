@@ -11,6 +11,7 @@ import WordCarousel from "./animations/WordCarousel";
 import { wordCarouselCode } from "./code-strings/wordCarousel";
 import TextUnderline from "./animations/TextUnderline";
 import { textUnderlineCode } from "./code-strings/textUnderline";
+import TickerTape from "./animations/TickerTape";
 
 export default function Home() {
   return (
@@ -76,6 +77,15 @@ export default function Home() {
           }}
           text="Underline (hover)"
         />
+        {/* THIS ANIMATION NEEDS TO BE FIXED
+        <CodePreview
+          animationComponent={TickerTape}
+          code={textUnderlineCode} // Update this to tickerTapeCode once ready
+          animationProps={{
+            text: "Breaking News: Live Update Alert - Latest Headlines.",
+            className: "text-xl font-bold",
+          }}
+        /> */}
       </div>
     </main>
   );
