@@ -10,7 +10,7 @@ import {
   EyeIcon,
 } from "@heroicons/react/24/outline";
 
-interface ControlsProps {
+type ControlsProps = {
   showCode: boolean;
   setShowCode: (value: boolean) => void;
   copied: boolean;
@@ -18,7 +18,7 @@ interface ControlsProps {
   handleReset: () => void;
   rotateIcon: boolean;
   code: string;
-}
+};
 
 export default function Controls({
   showCode,

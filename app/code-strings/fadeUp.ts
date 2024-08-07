@@ -6,7 +6,7 @@ export const fadeUpCode = `
 import { motion, useReducedMotion } from "framer-motion";
 import { ReactNode } from "react";
 
-interface FadeUpProps {
+type FadeUpProps = {
   children: ReactNode;
   duration?: number;
   delay?: number;
