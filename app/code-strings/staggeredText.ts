@@ -1,10 +1,10 @@
 export const staggeredTextCode = `
 "use client"; // for Next.js app router
 
-// Required props: from (number), to (number)
-// Optional props: animationOptions (KeyframeOptions), delay (number), decimalPlaces (number), className (string)
-// Good to know: Supports reduced motion preferences
-// Example Usage: <Counter from={0} to={100} />
+// Required props: children (string)
+// Optional props: el (keyof JSX.IntrinsicElements), className (string), once (boolean)
+// Good to know: Supports reduced motion preferences and staggered animation effect
+// Example Usage: <StaggeredText>Animate this text</StaggeredText>
 
 import { motion, useInView, useReducedMotion } from "framer-motion";
 import { useRef } from "react";
