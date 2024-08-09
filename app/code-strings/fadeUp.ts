@@ -1,6 +1,11 @@
 export const fadeUpCode = `
 "use client"; //for Next.js app router
 
+// Required props: children (ReactNode)
+// Optional props: duration (number), delay (number), className (string), up (boolean), amount ("all" | "some" | number), once (boolean)
+// Good to know: Supports reduced motion preferences and fade-up animation by default
+// Example Usage: <FadeUp duration={0.5} delay={0.2}>Content</FadeUp>
+
 import { motion, useReducedMotion } from "framer-motion";
 import { ReactNode } from "react";
 
@@ -14,7 +19,7 @@ type FadeInProps = {
   once?: boolean;
 };
 
-export default function FadeIn({
+export default function FadeUp({
   children,
   duration = 0.4,
   delay = 0,

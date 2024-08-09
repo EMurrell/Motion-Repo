@@ -1,5 +1,10 @@
 "use client"; //for Next.js app router
 
+// Required props: children (ReactNode)
+// Optional props: duration (number), delay (number), className (string), up (boolean), amount ("all" | "some" | number), once (boolean)
+// Good to know: Supports reduced motion preferences and fade-in animation with optional upward movement
+// Example Usage: <FadeIn duration={0.5} delay={0.2} up>Content</FadeIn>
+
 import { motion, useReducedMotion } from "framer-motion";
 import { ReactNode } from "react";
 
