@@ -8,13 +8,13 @@
 type TextUnderlineProps = {
   children: React.ReactNode;
   className?: string;
-  underlineColor?: string; // New prop for underline color
+  underlineColor?: string;
 };
 
 export default function TextUnderline({
   children,
   className = "",
-  underlineColor = "bg-black", // Default to black if not provided
+  underlineColor = "bg-black",
 }: TextUnderlineProps) {
   return (
     <span className={`group inline-block cursor-pointer ${className}`}>
