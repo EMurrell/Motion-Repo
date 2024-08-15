@@ -18,13 +18,13 @@ export default function Hero() {
           To get started, ensure you have{" "}
           <a
             href="https://www.framer.com/motion/introduction/"
-            className="text-blue-600 hover:text-blue-400 transition ease-in-out duration-200">
+            className="text-blue-800 hover:text-blue-600 hover:underline">
             Framer-Motion
           </a>{" "}
           and{" "}
           <a
             href="https://tailwindcss.com/docs/installation"
-            className="text-blue-600 hover:text-blue-400 transition ease-in-out duration-200">
+            className="text-blue-800 hover:text-blue-600 hover:underline">
             Tailwind CSS{" "}
           </a>{" "}
           installed and configured in your project. Copy the provided code into
